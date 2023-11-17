@@ -1,5 +1,17 @@
 import subprocess
 import os
+def install(package):
+    subprocess.check_call([sys.executable, "-m", "pip", "install", package])
+
+# Kiểm tra và cài đặt thư viện nếu cần
+libraries = ['colorama', 'requests', 'shutil', 'sqlite3', 'aiohttp', 'pystyle']
+
+for lib in libraries:
+    try:
+        __import__(lib)
+    except ImportError:
+        print(f"Bắt đầu tải các thư viện cần thiết...")
+        install(lib)
 import requests,os,time,re,json,uuid,random,sys
 from concurrent.futures import ThreadPoolExecutor
 import requests
