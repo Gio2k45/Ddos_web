@@ -1,10 +1,11 @@
 import subprocess
 import os
+import sys
 def install(package):
     subprocess.check_call([sys.executable, "-m", "pip", "install", package])
 
 # Kiểm tra và cài đặt thư viện nếu cần
-libraries = ['colorama', 'requests', 'shutil', 'sqlite3', 'aiohttp', 'pystyle']
+libraries = ['colorama', 'requests', 'shutil', 'sqlite3', 'aiohttp', 'pystyle', 'multiprocess']
 
 for lib in libraries:
     try:
